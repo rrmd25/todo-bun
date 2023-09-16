@@ -16,7 +16,7 @@ class TodoService {
     }
 
     createTodo(todo: Todo) {
-        return insertTodoQuery.get({ $task: todo.task, $author: todo.author, $description: todo.description, $createdAt: Date.now(), $lastUpdate: Date.now()})
+        return insertTodoQuery.get({ $task: todo.task, $status: todo.status, $author: todo.author, $description: todo.description, $createdAt: Date.now(), $lastUpdate: Date.now()})
     }
 
     deleteTodo(id: number) {
@@ -25,7 +25,7 @@ class TodoService {
     }
 
     updateTodo(id: number, todo: Todo) {
-        return updateTodoQuery.get({ $task: todo.task, $author: todo.author, $description: todo.description, $lastUpdate: Date.now()})
+        return updateTodoQuery.get({ $task: todo.task, $author: todo.author, $status: todo.status , $description: todo.description, $lastUpdate: Date.now()})
     }
 
 }
