@@ -1,5 +1,6 @@
 import Elysia from "elysia"
 import { ResourceNotFoundError } from "./error"
+import { createErrorJsonResponse } from "../util/util"
 
 export const errorHandler = new Elysia()
     .addError({
@@ -13,6 +14,3 @@ export const errorHandler = new Elysia()
         }
     })
 
-export function createErrorJsonResponse(error: Error, status: number) {
-    return { timestamp: new Date().toISOString(), locale: Intl.DateTimeFormat().resolvedOptions().timeZone, message: error.message, status: status }
-}

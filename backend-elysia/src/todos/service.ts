@@ -20,7 +20,8 @@ class TodoService {
     }
 
     deleteTodo(id: number) {
-        return deleteTodoByIdQuery.get({ $id: id })
+        deleteTodoByIdQuery.get({ $id: id })
+        return { "message": "Deleted!" }
     }
 
     updateTodo(id: number, todo: Todo) {
